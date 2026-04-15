@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Screening System</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Floating circles */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .circle:nth-child(1) {
+            width: 220px;
+            height: 220px;
+            top: 10%;
+            left: 15%;
+        }
+
+        .circle:nth-child(2) {
+            width: 160px;
+            height: 160px;
+            bottom: 10%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+
+        /* LIGHT CONTAINER */
+        .container {
+            background: rgba(237, 178, 178, 0.88);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 18px;
+            width: 360px;
+            text-align: center;
+            color: #333;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+            background: #fff;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            transform: scale(1.03);
+            border: 1px solid #ff416c;
+            box-shadow: 0 0 10px rgba(255,65,108,0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.07);
+            box-shadow: 0 5px 20px rgba(255,65,108,0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- background animation -->
+<div class="circle"></div>
+<div class="circle"></div>
+
+<!-- container -->
+<div class="container">
+    <h2>Resume Screening System</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="text" name="role" placeholder="Enter Job Role" required>
+        <input type="file" name="resume" required>
+        <button type="submit">Check Match</button>
+    </form>
+</div>
+
+</body>
+</html>
